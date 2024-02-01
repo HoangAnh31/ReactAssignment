@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -7,6 +9,36 @@
   pointer-events: none;
 }
 
+.control {
+  margin: 20px 0 10px;
+  display: block;
+}
+.control button {
+  margin: 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  min-width: 100px;
+  cursor: pointer;
+}
+.control input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.item p {
+  display: inline-block;
+  margin: 9px 20px 9px 0;
+}
+.container {
+  max-height: 250px;
+  overflow: auto;
+}
+.control-from {
+  display: inline-flex;
+  width: 100%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
