@@ -6,6 +6,7 @@ const GetResources = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    console.log(type);
     const getData = async () => {
       try {
         const response = await fetch(
@@ -13,27 +14,84 @@ const GetResources = () => {
         );
         const dataType = await response.json();
         setData(dataType);
-        console.log(data);
+        //console.log(data);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     getData();
-  }, []);
+  }, [type]);
+
+  //console.log(data);
 
   return (
     <>
       <div className="tab-list">
-        {arrTab.map((tab, index) => (
-          <button key={index} onClick={() => setType(tab)}>
-            {tab}
-          </button>
-        ))}
+        {arrTab.map((tab, index) => {
+          return (
+            <button
+              className={type === tab ? "btn btn-active" : "btn"}
+              key={index}
+              onClick={() => setType(tab)}
+            >
+              {tab}
+            </button>
+          );
+        })}
       </div>
       <div className="container-data">
-        {data.map((item, index) => {
-          <p key={index}>{item}</p>;
-        })}
+        <ul>
+          {data.map((item, index) => {
+            console.log(item);
+            if (type === arrTab[0]) {
+              return (
+                <li key={index}>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </li>
+              );
+            } else if (type === arrTab[1]) {
+              return (
+                <li key={index}>
+                  <h3>{item.name}</h3>
+                  <p>Email: {item.email}</p>
+                  <p>{item.body}</p>
+                </li>
+              );
+            } else if (type === arrTab[2]) {
+              return (
+                <li key={index}>
+                  <h3>{item.title}</h3>
+                </li>
+              );
+            } else if (type === arrTab[3]) {
+              return (
+                <li key={index}>
+                  <h3>{item.title}</h3>
+                  <p>
+                    url: <a href={item.url}>{item.url}</a>
+                  </p>
+                </li>
+              );
+            } else if (type === arrTab[4]) {
+              return (
+                <li key={index}>
+                  <h3>{item.title}</h3>
+                  <p>Status: {item.completed ? "Completed" : "Not yet"}</p>
+                </li>
+              );
+            } else if (type === arrTab[5]) {
+              return (
+                <li key={index}>
+                  <h3>{item.name}</h3>
+                  <p>
+                    Website: <a href={item.website}>{item.website}</a>
+                  </p>
+                </li>
+              );
+            }
+          })}
+        </ul>
       </div>
     </>
   );

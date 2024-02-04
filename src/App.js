@@ -6,9 +6,12 @@ import GetResources from "./Components/GetResources";
 function App() {
   return (
     <>
-      <TodoList></TodoList>
-
-      <GetResources></GetResources>
+      <section>
+        <TodoList></TodoList>
+      </section>
+      <section>
+        <GetResources></GetResources>
+      </section>
     </>
   );
 }
