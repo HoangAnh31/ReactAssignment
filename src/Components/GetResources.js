@@ -6,7 +6,7 @@ const GetResources = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(type);
+    //console.log(type);
     const getData = async () => {
       try {
         const response = await fetch(
@@ -26,11 +26,13 @@ const GetResources = () => {
 
   return (
     <>
-      <div className="tab-list">
+      <div className="mb-6">
         {arrTab.map((tab, index) => {
           return (
             <button
-              className={type === tab ? "btn btn-active" : "btn"}
+              className={
+                type === tab ? "btn-gradients btn-active" : "btn-gradients "
+              }
               key={index}
               onClick={() => setType(tab)}
             >
@@ -40,9 +42,8 @@ const GetResources = () => {
         })}
       </div>
       <div className="container-data">
-        <ul>
+        <ul className="p-2.5 pl-5 list-disc">
           {data.map((item, index) => {
-            console.log(item);
             if (type === arrTab[0]) {
               return (
                 <li key={index}>
@@ -80,7 +81,7 @@ const GetResources = () => {
                   <p>Status: {item.completed ? "Completed" : "Not yet"}</p>
                 </li>
               );
-            } else if (type === arrTab[5]) {
+            } else {
               return (
                 <li key={index}>
                   <h3>{item.name}</h3>
