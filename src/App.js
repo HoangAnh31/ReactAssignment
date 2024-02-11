@@ -5,7 +5,7 @@ import GetResources from "./Components/GetResources";
 function App() {
   return (
     <>
-      <h1 className="text-center font-medium text-[30px] my-5 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+      <h1 className="text-center font-medium text-[18px] md:text-[30px] my-5 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
         Hello, This is Tailwindcss style
       </h1>
       <section className="section">
