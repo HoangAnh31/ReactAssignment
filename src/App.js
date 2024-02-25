@@ -1,6 +1,7 @@
 //import "./App.css";
 import TodoList from "./Components/ToDoList";
 import GetResources from "./Components/GetResources";
+import Countdown from "./Components/CountDown";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       </section>
       <section className="section">
         <GetResources></GetResources>
+      </section>
+      <section className="section">
+        <Countdown></Countdown>
       </section>
     </>
   );

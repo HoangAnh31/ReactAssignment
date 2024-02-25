@@ -30,4 +30,8 @@ code {
   .container-data {
     @apply max-h-80 overflow-auto border mt-5 rounded-lg border-solid bg-white p-3 box-border;
   }
+
+  .btn {
+    @apply min-w-[100px] bg-white border rounded-lg mr-2;
+  }
 }
